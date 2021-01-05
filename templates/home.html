@@ -1,0 +1,475 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vadde Obanna</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+    <div class="menu-overlay">
+        <ul class="items">
+            <li onclick="togglemenu()"><a href="#home">Home</a></li>
+            <li onclick="togglemenu()"><a href="#about">About Us</a></li>
+            <li onclick="togglemenu()"><a href="#services">Services</a></li>
+            <li onclick="togglemenu()"><a href="#gallery">Gallery</a></li>
+            <li onclick="togglemenu()"><a href="#events">Events</a></li>
+            <li onclick="togglemenu()"><a href="#blogs">Blogs</a></li>
+            <li onclick="togglemenu()"><a href="#vadde">Vadde Obanna</a></li>
+            <li onclick="togglemenu()"><a href="#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    <header>        
+        <div class="navbar">
+            <div class="logo">
+                VOICE <span>T</span>rust
+            </div>
+            <div class="small-screen">
+                <div class="icons">
+                    <div class="icon menu-bar" onclick="togglemenu()">
+                        <span class="far fa-bars"></span>
+                    </div>
+                    <div class="icon close" onclick="togglemenu()">
+                        <span class="far fa-times"></span>
+                    </div>
+                </div>                
+            </div>
+            <div class="menu">                
+                <ul class="items">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>                    
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#gallery">Gallery</a></li>                    
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#vadde">Vadde Obanna</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="carousal" id="home">
+        <div class="control-links">
+            <div class="dot" onclick="toslide(1)"></div>
+            <div class="dot" onclick="toslide(2)"></div>
+            <div class="dot" onclick="toslide(3)"></div>
+        </div>
+        <div class="slides">
+            <div class="slide fade">
+                <a href="#">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREe08kttMZToL2yjTNcn7DOA9Qd7w_ZqpWUA&usqp=CAU" alt="image">
+                </div>
+                <div class="context">                    
+                    <span class="inline-text">This is a <h3 class="inline-text"> First slide. </h3></span>                    
+                </div>
+                </a>
+            </div>
+            <div class="slide fade">
+                <a href="#">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-cEUv68-t9eBR4wZirhUwHV7j8U9FTEWuKQ&usqp=CAU" alt="image">
+                </div>
+                <div class="context">                    
+                    <span class="inline-text">This is a <h3 class="inline-text"> Second slide. </h3></span>                    
+                </div>
+            </a>
+            </div>
+            <div class="slide fade">
+                <a href="">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTllzjolw4uIlzmX-zJXsDCL_rFn2q82DOHGw&usqp=CAU" alt="image">
+                </div>
+                <div class="context">                    
+                    <span class="inline-text">This is a <h3 class="inline-text"> Third slide. </h3></span>
+                    
+                </div>
+                </a>
+            </div>            
+        </div>
+        <div class="nav-arrows">
+            <div class="previous" onclick="toprevious()">                
+            </div>
+            <div class="next" onclick="tonext()">                
+            </div>
+        </div>
+    </section>
+
+    <section class="voice-trust" data-aos="fade-up" id="about">
+        <div class="heading">
+            <h1 text='Voice Trust' >Voice <span>T</span>rust</h1>
+        </div>
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Distinctio praesentium eaque modi tenetur a optio saepe laborum possimus illum perspiciatis, 
+                ab dicta asperiores quidem necessitatibus accusamus non, sint at nostrum?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Illum neque sequi nulla dolor consectetur iure aliquid incidunt excepturi ratione expedita facilis error, 
+                doloremque suscipit ducimus consequatur delectus voluptate, id quas.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Officia eligendi ullam at accusamus eius vero, excepturi laborum aliquid iste natus atque laboriosam. 
+                Velit officia recusandae totam veritatis odit fuga explicabo!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Quas debitis, nihil totam libero quam nostrum obcaecati at ipsa, 
+                quis repellat fuga quaerat aliquid quos optio possimus voluptate? Veniam, rerum. Quisquam!                
+            </p>
+        </div>
+    </section>    
+
+    <section class="gallery" id="gallery">
+        <div class="heading">
+            <h1><span>G</span>allery</h1>
+        </div>
+        <div class="images">
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLh0Kh0hHT4sjOMq6ZPR5rfwhA9pTkDjwdA&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyIpAt8211_DCp5rMAVhu-RQIe9gTu_r9piw&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-thnhL1NQsUKZMBOLJ3luShgT4CXPbNfflQ&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-thnhL1NQsUKZMBOLJ3luShgT4CXPbNfflQ&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSICpkBZ2zDM8edgovOlXpjhBAINqEO48WDew&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLh0Kh0hHT4sjOMq6ZPR5rfwhA9pTkDjwdA&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR_Z4k40jqNRwRBqbCuSRtsWqXTV2D4_Xr2A&usqp=CAU" alt="image">
+            </div>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLh0Kh0hHT4sjOMq6ZPR5rfwhA9pTkDjwdA&usqp=CAU" alt="image">
+            </div>
+        </div>
+    </section>
+
+    <section class="mission" id="mission">
+        <div class="shead">
+            <h1><span style="color: var(--website-color);">M</span>ission</h1>
+        </div>
+        <h3>A sub heading text</h3>
+        <p data-aos="flip-up">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, possimus laudantium! Culpa beatae nostrum itaque ea, dolore rem doloribus fuga, fugiat illo et quis laborum voluptatem quibusdam? Quibusdam, fuga vitae!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea earum id vitae facere, quae accusamus maiores? Doloribus, blanditiis repellendus consequuntur quibusdam adipisci quidem, excepturi quasi quam necessitatibus id consequatur at?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet porro sed autem ut aliquam, soluta aspernatur veritatis nam nobis nostrum corrupti harum beatae consequatur officiis a! Beatae amet assumenda quaerat.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, dolorum est odit similique et cumque ea laborum consequuntur provident? Qui animi accusantium harum porro pariatur natus aspernatur. Distinctio, deleniti tempore!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatibus repudiandae eos? Id tempora quae quam impedit voluptatem ea, consequuntur corporis quia alias possimus quis mollitia repellendus ab rem necessitatibus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, facilis sapiente eligendi odit, facere nulla eius sunt reprehenderit vero voluptate nemo? Necessitatibus aut, minima sint impedit recusandae quo consectetur similique.            
+        </p>
+    </section>
+
+    <section data-aos="fade-up-right" class="blogs" id="blogs">
+        <div class="heading">
+            <h1>Our Community <span>B</span>logs</h1>
+        </div>
+        <div class="container">
+            <div data-aos="zoom-in-up" class="card">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                </div>
+                <div class="contentbx">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
+                </div>
+                <hr>
+                <div class="see flex">
+                    <div class="view">
+                        <span class="fal fa-eye mr-1"></span><span>0</span>
+                    </div>                    
+                    <div class="social">
+                        <span class="fal fa-thumbs-up mr-1"></span>                
+                        <span class="far fa-share-alt"></span>    
+                    </div>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" class="card">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                </div>
+                <div class="contentbx">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
+                </div>
+                <hr>
+                <div class="see flex">
+                    <div class="view">
+                        <span class="fal fa-eye mr-1"></span><span>0</span>
+                    </div>                    
+                    <div class="social">
+                        <span class="fal fa-thumbs-up mr-1"></span>                
+                        <span class="far fa-share-alt"></span>    
+                    </div>
+                </div>
+            </div>
+            <div data-aos="zoom-in-up" class="card">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                </div>
+                <div class="contentbx">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
+                </div>
+                <hr>
+                <div class="see flex">
+                    <div class="view">
+                        <span class="fal fa-eye mr-1"></span><span>0</span>
+                    </div>                    
+                    <div class="social">
+                        <span class="fal fa-thumbs-up mr-1"></span>                
+                        <span class="far fa-share-alt"></span>    
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <section class="donate" id="donate"> 
+        <div class="shead">
+            <h1><span style="color: var(--orange-blue-combo);">D</span>onate</h1>
+        </div>
+        <div data-aos="fade-up"  class="content">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi sint architecto suscipit blanditiis tempore. Eligendi perspiciatis unde suscipit eveniet ratione quia quae, explicabo ducimus amet sit, est doloribus labore dolores?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla pariatur optio quam voluptate? Eveniet ut a pariatur autem velit? Doloremque quos explicabo eum nesciunt vel corporis ipsam modi delectus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, exercitationem, repellat nostrum quis nisi commodi eos tempora magni, incidunt neque quidem veniam dignissimos omnis laborum voluptate molestiae animi ea voluptates.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis, sapiente itaque excepturi dolorum voluptates quod perspiciatis voluptas laborum tenetur ratione vitae minus similique praesentium aperiam, quasi doloremque, recusandae est.
+        </div>
+        <br>
+        <a class="btn" >
+            Donate
+        </a>
+    </section>
+
+    <section class="events" id="events">
+        <div class="heading">
+            <h1><span>E</span>vents</h1>
+        </div>
+        <div class="container">
+            <div data-aos="fade-down" class="card">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                </div>
+                <div class="contentbx">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
+                    <a href="#readmore">                        
+                            <span>Read More</span>        
+                            <span>Read More</span>
+                    </a>
+                </div>
+            </div>
+            <div data-aos="fade-down" class="card">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                </div>
+                <div class="contentbx">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
+                    <a href="#readmore">                        
+                            <span>Read More</span>        
+                            <span>Read More</span>
+                    </a>
+                </div>
+            </div>
+            <div data-aos="fade-down" class="card">
+                <div class="imgbx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                </div>
+                <div class="contentbx">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
+                    <a href="#readmore">                        
+                            <span>Read More</span>        
+                            <span>Read More</span>
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h1> Contact <span>U</span>s</h1>
+        </div>
+        <div class="containerbx flex">            
+            <div class="membership">
+                <form action="." method="POST">
+                    <span>Become a Member</span>
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Eamil Id" name="email">
+                    <input type="number" placeholder="Phone number" name="phone" min="9999999999">
+                    <textarea type="text" placeholder="Address" name="address"></textarea>
+                    <input type="submit" class="btn" value="Submit">
+                </form>
+            </div>
+            <div class="map">
+                <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=17.377572,%2078.236373+(Voice%20Trust)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="350" frameborder="0"></iframe>
+            </div>           
+        </div>
+    </section>
+    <section class="socialbx">
+        <div class="cpycontainer">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-twitter"></a>
+        </div>
+        <div class="copyright">
+            <span>&#169; All rights reserverd by VOICE Trust. Powered by Presimax sof sols.</span>
+        </div>
+    </section>
+    <div id="google_translate_element"></div>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("active-dot", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active-dot";
+    timer=setTimeout(showSlides, 5000);
+    }
+
+    function toslide(num){
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex=num;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active-dot", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active-dot";
+        clearTimeout(timer);
+        timer=setTimeout(showSlides, 5000);
+    }
+    function tonext(){
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active-dot", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active-dot";    
+        clearTimeout(timer);
+        timer=setTimeout(showSlides, 5000);    
+    }
+    function toprevious(){
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }        
+        slideIndex--;
+        if (slideIndex == 0) {slideIndex = slides.length}    
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active-dot", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active-dot"; 
+        clearTimeout(timer);
+        timer=setTimeout(showSlides, 5000);       
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.images').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  dots: true,
+  infinite: true,
+  variableWidth: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+</script>
+<script>
+   $(document).ready(function(){
+    $(window).scroll(function(){
+        if (($(window).scrollTop() > 0 )){
+            $('.navbar').addClass( "sticky");
+        }
+        else{
+            $('.navbar').removeClass( "sticky");
+        }
+
+    });
+});
+</script>
+<script>
+    const togglemenu = () => {
+        $('.close').toggle();
+        $('.menu-bar').toggle();
+        $('.menu-overlay').toggleClass('flex');
+    }
+</script>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1200,
+    });
+  </script>
+</body>
+</html>
