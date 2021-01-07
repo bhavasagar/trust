@@ -1,7 +1,3 @@
-/*
-    DJANGO Admin styles
-*/
-
 @import url(fonts.css);
 
 html, body {
@@ -20,12 +16,12 @@ body {
 /* LINKS */
 
 a:link, a:visited {
-    color: #447e9b;
+    color: #111;
     text-decoration: none;
 }
 
 a:focus, a:hover {
-    color: #036;
+    color: #222;
 }
 
 a:focus {
@@ -37,7 +33,7 @@ a img {
 }
 
 a.section:link, a.section:visited {
-    color: #fff;
+    color: #333;
     text-decoration: none;
 }
 
@@ -424,7 +420,7 @@ select[multiple] {
 /* FORM BUTTONS */
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: #79aec8;
+    background: #ffa500;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -497,8 +493,14 @@ input[type=button][disabled].default {
     font-weight: 400;
     font-size: 13px;
     text-align: left;
-    background: #79aec8;
-    color: #fff;
+    background: #ffa500;
+    color: #fff !important;
+}
+
+.module h2, .module caption a{
+    color: #fff !important;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .module caption,
@@ -608,7 +610,7 @@ td ul.errorlist + input, td ul.errorlist + select, td ul.errorlist + textarea {
 /* BREADCRUMBS */
 
 div.breadcrumbs {
-    background: #79aec8;
+    background: #ffa500;
     padding: 10px 40px;
     border: none;
     font-size: 14px;
@@ -813,7 +815,7 @@ table#change-history tbody th {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background: #417690;
+    background: #ffa500;
     color: #ffc;
     overflow: hidden;
 }
@@ -839,7 +841,8 @@ table#change-history tbody th {
 }
 
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
-    color: #f5dd5d;
+    color: #fff;
+    font-weight: 700;
 }
 
 #branding h2 {
@@ -871,8 +874,8 @@ table#change-history tbody th {
 
 #user-tools a:focus, #user-tools a:hover {
     text-decoration: none;
-    border-bottom-color: #79aec8;
-    color: #79aec8;
+    border-bottom-color: #ffa500;
+    color: #ffa500;
 }
 
 /* SIDEBAR */

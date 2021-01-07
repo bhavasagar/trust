@@ -187,13 +187,13 @@
 #changelist-filter a:focus, #changelist-filter a:hover,
 #changelist-filter li.selected a:focus,
 #changelist-filter li.selected a:hover {
-    color: #036;
+    color: #000;
 }
 
 #changelist-filter #changelist-filter-clear a {
     font-size: 13px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #111;
 }
 
 /* DATE DRILLDOWN */
@@ -214,12 +214,12 @@
 }
 
 .change-list ul.toplinks .date-back a {
-    color: #999;
+    color: #222;
 }
 
 .change-list ul.toplinks .date-back a:focus,
 .change-list ul.toplinks .date-back a:hover {
-    color: #036;
+    color: #ffa500;
 }
 
 /* PAGINATOR */

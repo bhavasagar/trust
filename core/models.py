@@ -15,8 +15,7 @@ STATUS = (
 
 class Carousal(models.Model):
     image = models.ImageField(upload_to='casrousal/', null=True)
-    heading = models.CharField(max_length=15)
-    description = models.CharField(max_length=100)
+    heading = models.CharField(max_length=150)
     link = models.URLField(max_length = 200)
     update_at = models.DateTimeField(auto_now_add=True)
 
@@ -32,7 +31,8 @@ class Gallery(models.Model):
 
 class Event(models.Model):    
     title = models.CharField(max_length=15)
-    description = models.CharField(max_length=100)
+    description = models.TextField()
+    venue = models.CharField(max_length=100)
     image = models.ImageField(upload_to='events/', null=True)
     time = models.DateField()
     status = models.CharField(default='O',choices=STATUS,max_length = 5)
@@ -42,11 +42,12 @@ class Event(models.Model):
         return f"{self.title}"
 
 class Blog(models.Model):    
-    title = models.CharField(max_length=15)
-    description = models.CharField(max_length=100)
-    author_name = models.CharField(max_length=100)
-    image1 = models.ImageField(upload_to='blogs/', null=True)
+    title = models.CharField(max_length=35)
+    image1 = models.ImageField(upload_to='blogs/', null=True)    
+    first_paragraph = models.TextField()
     image2 = models.ImageField(upload_to='blogs/', null=True)
+    second_paragraph = models.TextField()
+    author_name = models.CharField(max_length=100)    
     read_time = models.IntegerField()        
     homepage_display = models.BooleanField(default=False)
     update_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{blog.title}}</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <style>
+        .heading{
+            margin-left: 5rem !important;
+        }
+        .container{
+            padding-top: 1rem !important;
+        }
+        .hor-line{
+            width: 90%;
+            margin: 0 auto;
+            height: 1.1px;
+            background: #111;
+        }
+        .center{
+            text-align: center;
+            justify-content: center !important;
+            margin: auto 0;
+        }
+        .heading.center{
+            margin-left: 0 !important;
+        }
+        @media screen and (max-width:600px){
+            .heading{
+                margin-left: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-overlay">
+        <ul class="items">
+            <li onclick="togglemenu()"><a href="#home">Home</a></li>
+            <li onclick="togglemenu()"><a href="#about">About Us</a></li>
+            <li onclick="togglemenu()"><a href="#services">Services</a></li>
+            <li onclick="togglemenu()"><a href="#gallery">Gallery</a></li>
+            <li onclick="togglemenu()"><a href="#events">Events</a></li>
+            <li onclick="togglemenu()"><a href="#blogs">Blogs</a></li>
+            <li onclick="togglemenu()"><a href="#vadde">Vadde Obanna</a></li>
+            <li onclick="togglemenu()"><a href="#contact">Contact Us</a></li>
+            <li><div id="google_translate_element"></div></li>
+        </ul>
+    </div>
+    <header>        
+        <div class="navbar">
+            <div class="logo">
+                VOICE <span>T</span>rust
+            </div>
+            <div class="logo-img">
+                <img src="{% static 'images/voicetrustlogo.jpeg' %}" alt="">
+            </div>
+            <div class="small-screen bared">
+                <div class="icons">
+                    <div class="icon menu-bar" onclick="togglemenu()">
+                        <span class="far fa-bars"></span>
+                    </div>
+                    <div class="icon close" onclick="togglemenu()">
+                        <span class="far fa-times"></span>
+                    </div>
+                </div>                
+            </div>
+            <div class="menu">                
+                <ul class="items">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>                    
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#gallery">Gallery</a></li>                    
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#vadde">Vadde Obanna</a></li>
+                    <li><a href="#contact">Contact Us</a></li>                   
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">        
+    
+        <section class="events" id="events">
+            <div class="heading center">
+                <h1>Some <span>T</span>ext</h1>
+            </div>
+            <div class="container">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum labore excepturi perspiciatis, ex quos amet quam saepe id sapiente eaque, quibusdam eveniet officia, magni repellat impedit atque minima accusamus explicabo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio mollitia autem debitis in? Laboriosam maxime, soluta est voluptates perferendis officia voluptatibus magnam aut delectus, quidem iste nesciunt rem aliquam laborum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, omnis debitis tempore explicabo architecto labore dolores illum perferendis corporis numquam quae atque doloribus quia, obcaecati accusantium recusandae reprehenderit libero nobis?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, quibusdam? Voluptates officia eum, sapiente alias excepturi nemo praesentium sit dolorem ut deleniti laborum rerum reprehenderit! Vitae eaque ipsa ab dolor?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ducimus ad explicabo assumenda voluptatem nam vero est. Soluta, dolor iure magni minima dicta obcaecati voluptatum pariatur corrupti beatae impedit! Quo!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorum optio a? Exercitationem, ex debitis, maxime a nobis eligendi est corporis inventore animi voluptas neque doloremque accusantium at quibusdam blanditiis.
+                libero
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio, sit impedit, neque soluta unde, odit officia deserunt labore aut molestiae. Voluptatibus aliquam accusamus, ex fugit delectus sint iusto in?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam ut, itaque harum sed magnam. Pariatur quas illum, corrupti earum aut eos omnis suscipit. Vero ipsum deserunt natus qui cum.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam libero modi doloribus quas tempore fuga consequuntur fugit numquam, accusamus, tempora eum suscipit ab dolore voluptatibus harum! Enim obcaecati in adipisci.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil commodi cupiditate totam quibusdam earum, nulla amet sit vitae architecto nam vel delectus, tempora sunt dolor quod perferendis, omnis reprehenderit corrupti.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum labore excepturi perspiciatis, ex quos amet quam saepe id sapiente eaque, quibusdam eveniet officia, magni repellat impedit atque minima accusamus explicabo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum labore excepturi perspiciatis, ex quos amet quam saepe id sapiente eaque, quibusdam eveniet officia, magni repellat impedit atque minima accusamus explicabo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio mollitia autem debitis in? Laboriosam maxime, soluta est voluptates perferendis officia voluptatibus magnam aut delectus, quidem iste nesciunt rem aliquam laborum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, omnis debitis tempore explicabo architecto labore dolores illum perferendis corporis numquam quae atque doloribus quia, obcaecati accusantium recusandae reprehenderit libero nobis?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, quibusdam? Voluptates officia eum, sapiente alias excepturi nemo praesentium sit dolorem ut deleniti laborum rerum reprehenderit! Vitae eaque ipsa ab dolor?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ducimus ad explicabo assumenda voluptatem nam vero est. Soluta, dolor iure magni minima dicta obcaecati voluptatum pariatur corrupti beatae impedit! Quo!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolorum optio a? Exercitationem, ex debitis, maxime a nobis eligendi est corporis inventore animi voluptas neque doloremque accusantium at quibusdam blanditiis.
+                libero
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio, sit impedit, neque soluta unde, odit officia deserunt labore aut molestiae. Voluptatibus aliquam accusamus, ex fugit delectus sint iusto in?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam ut, itaque harum sed magnam. Pariatur quas illum, corrupti earum aut eos omnis suscipit. Vero ipsum deserunt natus qui cum.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam libero modi doloribus quas tempore fuga consequuntur fugit numquam, accusamus, tempora eum suscipit ab dolore voluptatibus harum! Enim obcaecati in adipisci.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil commodi cupiditate totam quibusdam earum, nulla amet sit vitae architecto nam vel delectus, tempora sunt dolor quod perferendis, omnis reprehenderit corrupti.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum labore excepturi perspiciatis, ex quos amet quam saepe id sapiente eaque, quibusdam eveniet officia, magni repellat impedit atque minima accusamus explicabo.
+            </div>
+        </section>
+
+        <div class="hor-line"></div>
+
+        <section class="events" id="events">
+            <div class="heading center">
+                <h1>Our <span>T</span>rust Members</h1>
+            </div>
+            <div class="container">
+                <div data-aos="fade-down" class="card">
+                    <div class="imgbx">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ZM61y_o_2PWicMlkj7g2Z-e5x25PxHaN2g&usqp=CAU" alt="image">
+                    </div>
+                    <div class="contentbx">
+                        <h3>Card Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
+                        <!-- <a href="#readmore">                        
+                                <span>Read More</span>        
+                                <span>Read More</span>
+                        </a> -->
+                    </div>
+                </div>
+                <div data-aos="fade-down" class="card">
+                    <div class="imgbx">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ZM61y_o_2PWicMlkj7g2Z-e5x25PxHaN2g&usqp=CAU" alt="image">
+                    </div>
+                    <div class="contentbx">
+                        <h3>Card Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
+                        <!-- <a href="#readmore">                        
+                                <span>Read More</span>        
+                                <span>Read More</span>
+                        </a> -->
+                    </div>
+                </div>
+                <div data-aos="fade-down" class="card">
+                    <div class="imgbx">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ZM61y_o_2PWicMlkj7g2Z-e5x25PxHaN2g&usqp=CAU" alt="image">
+                    </div>
+                    <div class="contentbx">
+                        <h3>Card Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
+                        <!-- <a href="#readmore">                        
+                                <span>Read More</span>        
+                                <span>Read More</span>
+                        </a> -->
+                    </div>
+                </div>            
+            </div>
+        </section>
+
+    </div>
+    
+    <section class="footer">
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-twitter"></a>
+        </div>
+        <div class="copyright-act">
+            <span>&#169; All rights reserverd by VOICE Trust. Powered by Presimax sof sols.</span>
+        </div>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+     $(window).scroll(function(){
+         if (($(window).scrollTop() > 0 )){
+             $('.navbar').addClass( "sticky");
+         }
+         else{
+             $('.navbar').removeClass( "sticky");
+         }
+ 
+     });
+ });
+ </script>
+ <script>
+     const togglemenu = () => {
+         $('.close').toggle();
+         $('.menu-bar').toggle();
+         $('.menu-overlay').toggleClass('flex');
+     }
+ </script>
+ <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+ <script type="text/javascript">
+ function googleTranslateElementInit() {
+     new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages : 'te,en'}, 'google_translate_element');
+ }
+ </script>
+</html>

@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vadde Obanna</title>
+    <title>VOICE Trust</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">    
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
@@ -21,14 +21,18 @@
             <li onclick="togglemenu()"><a href="#blogs">Blogs</a></li>
             <li onclick="togglemenu()"><a href="#vadde">Vadde Obanna</a></li>
             <li onclick="togglemenu()"><a href="#contact">Contact Us</a></li>
+            <li><a id="google_translate_element"></a></li>
         </ul>
+    </div>
+    <div class="logo-img">
+        <img src="{% static 'images/logo.png' %}" alt="">
     </div>
     <header>        
         <div class="navbar">
             <div class="logo">
                 VOICE <span>T</span>rust
-            </div>
-            <div class="small-screen">
+            </div>            
+            <div class="small-screen bared">
                 <div class="icons">
                     <div class="icon menu-bar" onclick="togglemenu()">
                         <span class="far fa-bars"></span>
@@ -48,6 +52,7 @@
                     <li><a href="#blogs">Blogs</a></li>
                     <li><a href="#vadde">Vadde Obanna</a></li>
                     <li><a href="#contact">Contact Us</a></li>
+                    <li><div id="google_translate_element1"></div></li>
                 </ul>
             </div>
         </div>
@@ -59,37 +64,18 @@
             <div class="dot" onclick="toslide(3)"></div>
         </div>
         <div class="slides">
+            {% for car in carousal  %}
             <div class="slide fade">
-                <a href="#">
+                <a href="{{ car.link }}">
                 <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREe08kttMZToL2yjTNcn7DOA9Qd7w_ZqpWUA&usqp=CAU" alt="image">
+                    <img src="{{ car.image.url }}" alt="image">
                 </div>
                 <div class="context">                    
-                    <span class="inline-text">This is a <h3 class="inline-text"> First slide. </h3></span>                    
+                    <span class="inline-text"><h3 class="inline-text"> {{ car.heading }}</h3></span>                    
                 </div>
                 </a>
-            </div>
-            <div class="slide fade">
-                <a href="#">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-cEUv68-t9eBR4wZirhUwHV7j8U9FTEWuKQ&usqp=CAU" alt="image">
-                </div>
-                <div class="context">                    
-                    <span class="inline-text">This is a <h3 class="inline-text"> Second slide. </h3></span>                    
-                </div>
-            </a>
-            </div>
-            <div class="slide fade">
-                <a href="">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTllzjolw4uIlzmX-zJXsDCL_rFn2q82DOHGw&usqp=CAU" alt="image">
-                </div>
-                <div class="context">                    
-                    <span class="inline-text">This is a <h3 class="inline-text"> Third slide. </h3></span>
-                    
-                </div>
-                </a>
-            </div>            
+            </div>   
+            {% endfor %}                        
         </div>
         <div class="nav-arrows">
             <div class="previous" onclick="toprevious()">                
@@ -104,7 +90,7 @@
             <h1 text='Voice Trust' >Voice <span>T</span>rust</h1>
         </div>
         <div class="content">
-            <p>
+            <p class="more" style="display: block;">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Distinctio praesentium eaque modi tenetur a optio saepe laborum possimus illum perspiciatis, 
                 ab dicta asperiores quidem necessitatibus accusamus non, sint at nostrum?
@@ -126,33 +112,11 @@
             <h1><span>G</span>allery</h1>
         </div>
         <div class="images">
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLh0Kh0hHT4sjOMq6ZPR5rfwhA9pTkDjwdA&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyIpAt8211_DCp5rMAVhu-RQIe9gTu_r9piw&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-thnhL1NQsUKZMBOLJ3luShgT4CXPbNfflQ&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-thnhL1NQsUKZMBOLJ3luShgT4CXPbNfflQ&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSICpkBZ2zDM8edgovOlXpjhBAINqEO48WDew&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLh0Kh0hHT4sjOMq6ZPR5rfwhA9pTkDjwdA&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR_Z4k40jqNRwRBqbCuSRtsWqXTV2D4_Xr2A&usqp=CAU" alt="image">
-            </div>
-            <div class="img">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLh0Kh0hHT4sjOMq6ZPR5rfwhA9pTkDjwdA&usqp=CAU" alt="image">
-            </div>
+            {% for i in gallery %}
+            <div class="img" style="--p:{{forloop.counter}}">
+                <img src="{{ i.image.url }}" alt="image">
+            </div>    
+            {% endfor %}        
         </div>
     </section>
 
@@ -161,7 +125,7 @@
             <h1><span style="color: var(--website-color);">M</span>ission</h1>
         </div>
         <h3>A sub heading text</h3>
-        <p data-aos="flip-up">
+        <p data-aos="flip-up " class="more" style="display: block;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, possimus laudantium! Culpa beatae nostrum itaque ea, dolore rem doloribus fuga, fugiat illo et quis laborum voluptatem quibusdam? Quibusdam, fuga vitae!
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea earum id vitae facere, quae accusamus maiores? Doloribus, blanditiis repellendus consequuntur quibusdam adipisci quidem, excepturi quasi quam necessitatibus id consequatur at?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet porro sed autem ut aliquam, soluta aspernatur veritatis nam nobis nostrum corrupti harum beatae consequatur officiis a! Beatae amet assumenda quaerat.
@@ -184,7 +148,7 @@
                     <h3>Card Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
                 </div>
-                <hr>
+                <div class="hor-line"></div>
                 <div class="see flex">
                     <div class="view">
                         <span class="fal fa-eye mr-1"></span><span>0</span>
@@ -203,7 +167,7 @@
                     <h3>Card Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
                 </div>
-                <hr>
+                <div class="hor-line"></div>
                 <div class="see flex">
                     <div class="view">
                         <span class="fal fa-eye mr-1"></span><span>0</span>
@@ -222,7 +186,7 @@
                     <h3>Card Title</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
                 </div>
-                <hr>
+                <div class="hor-line"></div>
                 <div class="see flex">
                     <div class="view">
                         <span class="fal fa-eye mr-1"></span><span>0</span>
@@ -240,7 +204,7 @@
         <div class="shead">
             <h1><span style="color: var(--orange-blue-combo);">D</span>onate</h1>
         </div>
-        <div data-aos="fade-up"  class="content">
+        <div class="content more">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi sint architecto suscipit blanditiis tempore. Eligendi perspiciatis unde suscipit eveniet ratione quia quae, explicabo ducimus amet sit, est doloribus labore dolores?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla pariatur optio quam voluptate? Eveniet ut a pariatur autem velit? Doloremque quos explicabo eum nesciunt vel corporis ipsam modi delectus.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, exercitationem, repellat nostrum quis nisi commodi eos tempora magni, incidunt neque quidem veniam dignissimos omnis laborum voluptate molestiae animi ea voluptates.
@@ -257,7 +221,7 @@
             <h1><span>E</span>vents</h1>
         </div>
         <div class="container">
-            <div data-aos="fade-down" class="card">
+            <div data-aos="zoom-out" class="card">
                 <div class="imgbx">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
                 </div>
@@ -270,7 +234,7 @@
                     </a>
                 </div>
             </div>
-            <div data-aos="fade-down" class="card">
+            <div data-aos="zoom-out" class="card">
                 <div class="imgbx">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
                 </div>
@@ -283,7 +247,7 @@
                     </a>
                 </div>
             </div>
-            <div data-aos="fade-down" class="card">
+            <div data-aos="zoom-out" class="card">
                 <div class="imgbx">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
                 </div>
@@ -306,10 +270,11 @@
         <div class="containerbx flex">            
             <div class="membership">
                 <form action="." method="POST">
+                    {% csrf_token %}
                     <span>Become a Member</span>
                     <input type="text" placeholder="Name" name="name">
                     <input type="text" placeholder="Eamil Id" name="email">
-                    <input type="number" placeholder="Phone number" name="phone" min="9999999999">
+                    <input type="number" placeholder="Phone number" name="phone" min="999999999">
                     <textarea type="text" placeholder="Address" name="address"></textarea>
                     <input type="submit" class="btn" value="Submit">
                 </form>
@@ -328,8 +293,7 @@
         <div class="copyright">
             <span>&#169; All rights reserverd by VOICE Trust. Powered by Presimax sof sols.</span>
         </div>
-    </section>
-    <div id="google_translate_element"></div>
+    </section>    
 <script>
     var slideIndex = 0;
     showSlides();
@@ -458,13 +422,48 @@
         $('.menu-overlay').toggleClass('flex');
     }
 </script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages : 'te,en'}, 'google_translate_element');
 }
 </script>
+<script>
+    $(document).ready(function() {
+	var showChar = 500;
+	var ellipsestext = "...";
+	var moretext = "Read more";
+	var lesstext = "Read less";
+	$('.more').each(function() {
+		var content = $(this).html();
+        console.log(content.length)
+		if(content.length > showChar) {
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+
+			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+            $(this).html(html);            
+            console.log(this)
+		}
+
+	});
+
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+});
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
