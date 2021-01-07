@@ -37,51 +37,7 @@
     </style>
 </head>
 <body>
-    <div class="menu-overlay">
-        <ul class="items">
-            <li onclick="togglemenu()"><a href="#home">Home</a></li>
-            <li onclick="togglemenu()"><a href="#about">About Us</a></li>
-            <li onclick="togglemenu()"><a href="#services">Services</a></li>
-            <li onclick="togglemenu()"><a href="#gallery">Gallery</a></li>
-            <li onclick="togglemenu()"><a href="#events">Events</a></li>
-            <li onclick="togglemenu()"><a href="#blogs">Blogs</a></li>
-            <li onclick="togglemenu()"><a href="#vadde">Vadde Obanna</a></li>
-            <li onclick="togglemenu()"><a href="#contact">Contact Us</a></li>
-            <li><div id="google_translate_element"></div></li>
-        </ul>
-    </div>
-    <header>        
-        <div class="navbar">
-            <div class="logo">
-                VOICE <span>T</span>rust
-            </div>
-            <div class="logo-img">
-                <img src="{% static 'images/voicetrustlogo.jpeg' %}" alt="">
-            </div>
-            <div class="small-screen bared">
-                <div class="icons">
-                    <div class="icon menu-bar" onclick="togglemenu()">
-                        <span class="far fa-bars"></span>
-                    </div>
-                    <div class="icon close" onclick="togglemenu()">
-                        <span class="far fa-times"></span>
-                    </div>
-                </div>                
-            </div>
-            <div class="menu">                
-                <ul class="items">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>                    
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#gallery">Gallery</a></li>                    
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#vadde">Vadde Obanna</a></li>
-                    <li><a href="#contact">Contact Us</a></li>                   
-                </ul>
-            </div>
-        </div>
-    </header>
+    {% include 'navbar.html' %}
 
     <div class="container">        
     

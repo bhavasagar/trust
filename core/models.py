@@ -34,7 +34,7 @@ class Event(models.Model):
     description = models.TextField()
     venue = models.CharField(max_length=100)
     image = models.ImageField(upload_to='events/', null=True)
-    time = models.DateField()
+    time = models.DateTimeField()
     status = models.CharField(default='O',choices=STATUS,max_length = 5)
     update_at = models.DateTimeField(auto_now_add=True)
 

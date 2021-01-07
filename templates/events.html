@@ -1,13 +1,14 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{blog.title}}</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>        
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <style>
         .heading{
             margin-left: 5rem !important;
@@ -21,201 +22,141 @@
             height: 1.1px;
             background: #111;
         }
+        .tabs{
+            width: 60vw;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 2px solid var(--website-color);
+            margin: 0 auto;
+            margin-top: 5rem;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .active{
+            color: var(--website-color);
+            border-bottom: none;
+        }
+        .events{
+            display: none;
+        }
+        .active-event{
+            display: block;
+            width: 100vw;
+        }
         @media screen and (max-width:600px){
             .heading{
                 margin-left: 1rem !important;
+            }
+            .tabs{
+            width: 100vw;
+            font-size: 0.985rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="menu-overlay">
-        <ul class="items">
-            <li onclick="togglemenu()"><a href="#home">Home</a></li>
-            <li onclick="togglemenu()"><a href="#about">About Us</a></li>
-            <li onclick="togglemenu()"><a href="#services">Services</a></li>
-            <li onclick="togglemenu()"><a href="#gallery">Gallery</a></li>
-            <li onclick="togglemenu()"><a href="#events">Events</a></li>
-            <li onclick="togglemenu()"><a href="#blogs">Blogs</a></li>
-            <li onclick="togglemenu()"><a href="#vadde">Vadde Obanna</a></li>
-            <li onclick="togglemenu()"><a href="#contact">Contact Us</a></li>
-            <li><div id="google_translate_element"></div></li>
-        </ul>
-    </div>
-    <header>        
-        <div class="navbar">
-            <div class="logo">
-                VOICE <span>T</span>rust
-            </div>
-            <div class="small-screen bared">
-                <div class="icons">
-                    <div class="icon menu-bar" onclick="togglemenu()">
-                        <span class="far fa-bars"></span>
-                    </div>
-                    <div class="icon close" onclick="togglemenu()">
-                        <span class="far fa-times"></span>
-                    </div>
-                </div>                
-            </div>
-            <div class="menu">                
-                <ul class="items">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>                    
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#gallery">Gallery</a></li>                    
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#vadde">Vadde Obanna</a></li>
-                    <li><a href="#contact">Contact Us</a></li>                   
-                </ul>
-            </div>
-        </div>
-    </header>
+    {% include 'navbar.html' %}
 
     <div class="container">        
-    
-        <section class="events" id="events">
+        
+        <nav class="tabs">
+            <a href="#uevents" class="active event-tab">Upcomming</a>
+            <a href="#oevents" class=" event-tab" >Ongoing</a>
+            <a href="#cevents" class=" event-tab" >Completed</a>
+        </nav>
+
+        <section class="events active-event" id="uevents">
             <div class="heading">
                 <h1>Upcomming <span>E</span>vents</h1>
             </div>
             <div class="container">
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                {% for i in uevents %}
+                <div data-aos="zoom-out" class="card">
+                    <div class="imgbx event">
+                        <img src="{{ i.image.url }}" alt="image">
                     </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
+                    <div class="contentbx event">
+                        <h3>{{ i.title }}</h3>
+                        <p class="more">{{ i.description }}</p>                    
                     </div>
-                </div>
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                    <div class="allotment">
+                        <div class="time">
+                            <span>Timings</span>
+                            <span>{{ i.time | naturaltime }}</span>
+                        </div>
+                        <div class="venue">
+                            <span>Venue</span>
+                            <span>{{ i.venue }}</span>
+                        </div>
                     </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
-                    </div>
-                </div>
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
-                    </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
-                    </div>
-                </div>            
+                </div>   
+                {% endfor %}             
             </div>
         </section>
 
-        <div class="hor-line"></div>
+        <!-- <div class="hor-line"></div> -->
 
-        <section class="events" id="events">
+        <section class="events" id="oevents">
             <div class="heading">
                 <h1>Ongoing <span>E</span>vents</h1>
             </div>
             <div class="container">
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                {% for i in oevents %}
+                <div data-aos="zoom-out" class="card">
+                    <div class="imgbx event">
+                        <img src="{{ i.image.url }}" alt="image">
                     </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
+                    <div class="contentbx event">
+                        <h3>{{ i.title }}</h3>
+                        <p class="more">{{ i.description }}</p>                    
                     </div>
-                </div>
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                    <div class="allotment">
+                        <div class="time">
+                            <span>Timings</span>
+                            <span>{{ i.time | naturaltime }}</span>
+                        </div>
+                        <div class="venue">
+                            <span>Venue</span>
+                            <span>{{ i.venue }}</span>
+                        </div>
                     </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
-                    </div>
-                </div>
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
-                    </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
-                    </div>
-                </div>            
+                </div>   
+                {% endfor %}             
             </div>
         </section>
 
-        <div class="hor-line"></div>
+        <!-- <div class="hor-line"></div> -->
 
-        <section class="events" id="events">
+        <section class="events" id="cevents">
             <div class="heading">
                 <h1>Completed <span>E</span>vents</h1>
             </div>
             <div class="container">
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                {% for i in cevents %}
+                <div data-aos="zoom-out" class="card">
+                    <div class="imgbx event">
+                        <img src="{{ i.image.url }}" alt="image">
                     </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
+                    <div class="contentbx event">
+                        <h3>{{ i.title }}</h3>
+                        <p class="more">{{ i.description }}</p>                    
                     </div>
-                </div>
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                    <div class="allotment">
+                        <div class="time">
+                            <span>Timings</span>
+                            <span>{{ i.time | naturaltime }}</span>
+                        </div>
+                        <div class="venue">
+                            <span>Venue</span>
+                            <span>{{ i.venue }}</span>
+                        </div>
                     </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
-                    </div>
-                </div>
-                <div data-aos="fade-down" class="card">
-                    <div class="imgbx">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
-                    </div>
-                    <div class="contentbx">
-                        <h3>Card Title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                        <a href="#readmore">                        
-                                <span>Read More</span>        
-                                <span>Read More</span>
-                        </a>
-                    </div>
-                </div>            
+                </div>   
+                {% endfor %}             
             </div>
         </section>
 
@@ -259,4 +200,49 @@
      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages : 'te,en'}, 'google_translate_element');
  }
  </script>
+ <script>
+    $('.event-tab').on('click',function() {
+        $('.event-tab').removeClass('active');        
+        $(this).addClass('active');
+        let id = $(this).attr('href');
+        $('.events').removeClass('active-event');        
+        $(id).addClass('active-event');
+    })
+ </script>
+ <script>
+    $(document).ready(function() {
+	var showChar = 250;
+	var ellipsestext = "...";
+	var moretext = "Read more";
+	var lesstext = "Read less";
+	$('.more').each(function() {
+		var content = $(this).html();
+        console.log(content.length)
+		if(content.length > showChar) {
+
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+
+			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+            $(this).html(html);            
+            console.log(this)
+		}
+
+	});
+
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+});
+</script>
 </html>

@@ -244,10 +244,10 @@ hr{
         display: none;
     }
     header .navbar .logo{
-        font-size: 1.4rem;        
+        font-size: 1rem;        
     }
     header .navbar .logo span{        
-        font-size: 1.6rem;    
+        font-size: 1.2rem;    
     }
     header .navbar{
         padding: 10px 15px;        

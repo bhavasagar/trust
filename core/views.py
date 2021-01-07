@@ -32,21 +32,26 @@ class Home(View):
     def get(self, *args, **kwargs):
         carousal = Carousal.objects.all()
         gallery = Gallery.objects.all()
-        context={ 'carousal':carousal,'gallery':gallery }        
+        events = Event.objects.filter(status="O")
+        blogs = Blog.objects.filter(homepage_display=True)
+        context={ 'carousal':carousal,'gallery':gallery, 'events':events, 'blogs':blogs }        
         return render(self.request,self.template_name,context=context)
 
 class Blog_page(View):
     template_name='blog.html'
     def get(self, *args, **kwargs):
-        blog = Blog.objects.get(pk=1)
-        context={ 'blog':blog}        
+        blog = Blog.objects.get(pk=kwargs['pk'])
+        blogs = Blog.objects.all().exclude(pk=kwargs['pk']).order_by('-id')
+        context={ 'blog':blog,'blogs':blogs}        
         return render(self.request,self.template_name,context=context)
 
 class Events_page(View):
     template_name='events.html'
     def get(self, *args, **kwargs):
-        events = Event.objects.all()
-        context={ 'events':events}        
+        uevents = Event.objects.filter(status="U")
+        oevents = Event.objects.filter(status="O")
+        cevents = Event.objects.filter(status="c")
+        context={ 'uevents':uevents,'cevents':cevents,'oevents':oevents}        
         return render(self.request,self.template_name,context=context)
 
 def Obanna(request):

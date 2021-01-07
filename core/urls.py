@@ -14,7 +14,7 @@ app_name = 'core'
 
 urlpatterns = [
     path('', Home.as_view(), name='home'),      
-    path('blog/', Blog_page.as_view(), name='blog'),      
+    path('blog/<int:pk>/', Blog_page.as_view(), name='blog'),      
     path('events/', Events_page.as_view(), name='events'),
     path('obanna/', Obanna, name='obanna'),      
     path('about/', About, name='about'), 

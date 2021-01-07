@@ -1,62 +1,17 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOICE Trust</title>
+    <title>VOICE Trust</title>        
     <link rel="stylesheet" href="{% static 'css/home.css' %}">    
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
-    <div class="menu-overlay">
-        <ul class="items">
-            <li onclick="togglemenu()"><a href="#home">Home</a></li>
-            <li onclick="togglemenu()"><a href="#about">About Us</a></li>
-            <li onclick="togglemenu()"><a href="#services">Services</a></li>
-            <li onclick="togglemenu()"><a href="#gallery">Gallery</a></li>
-            <li onclick="togglemenu()"><a href="#events">Events</a></li>
-            <li onclick="togglemenu()"><a href="#blogs">Blogs</a></li>
-            <li onclick="togglemenu()"><a href="#vadde">Vadde Obanna</a></li>
-            <li onclick="togglemenu()"><a href="#contact">Contact Us</a></li>
-            <li><a id="google_translate_element"></a></li>
-        </ul>
-    </div>
-    <div class="logo-img">
-        <img src="{% static 'images/logo.png' %}" alt="">
-    </div>
-    <header>        
-        <div class="navbar">
-            <div class="logo">
-                VOICE <span>T</span>rust
-            </div>            
-            <div class="small-screen bared">
-                <div class="icons">
-                    <div class="icon menu-bar" onclick="togglemenu()">
-                        <span class="far fa-bars"></span>
-                    </div>
-                    <div class="icon close" onclick="togglemenu()">
-                        <span class="far fa-times"></span>
-                    </div>
-                </div>                
-            </div>
-            <div class="menu">                
-                <ul class="items">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>                    
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#gallery">Gallery</a></li>                    
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#vadde">Vadde Obanna</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><div id="google_translate_element1"></div></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    {% include 'navbar.html' %}
     <section class="carousal" id="home">
         <div class="control-links">
             <div class="dot" onclick="toslide(1)"></div>
@@ -120,6 +75,7 @@
         </div>
     </section>
 
+
     <section class="mission" id="mission">
         <div class="shead">
             <h1><span style="color: var(--website-color);">M</span>ission</h1>
@@ -140,15 +96,16 @@
             <h1>Our Community <span>B</span>logs</h1>
         </div>
         <div class="container">
+            {% for i in blogs %}
             <div data-aos="zoom-in-up" class="card">
                 <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                    <img src="{{i.image1.url}}" alt="image">
                 </div>
                 <div class="contentbx">
-                    <h3>Card Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
+                    <h3>{{ i.title }}</h3>
+                    <p class="more">{{ i.first_paragraph }}</p>                    
                 </div>
-                <div class="hor-line"></div>
+                <!-- <div class="hor-line"></div>
                 <div class="see flex">
                     <div class="view">
                         <span class="fal fa-eye mr-1"></span><span>0</span>
@@ -156,47 +113,10 @@
                     <div class="social">
                         <span class="fal fa-thumbs-up mr-1"></span>                
                         <span class="far fa-share-alt"></span>    
-                    </div>
+                    </div> -->
                 </div>
-            </div>
-            <div data-aos="zoom-in-up" class="card">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
-                </div>
-                <div class="contentbx">
-                    <h3>Card Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
-                </div>
-                <div class="hor-line"></div>
-                <div class="see flex">
-                    <div class="view">
-                        <span class="fal fa-eye mr-1"></span><span>0</span>
-                    </div>                    
-                    <div class="social">
-                        <span class="fal fa-thumbs-up mr-1"></span>                
-                        <span class="far fa-share-alt"></span>    
-                    </div>
-                </div>
-            </div>
-            <div data-aos="zoom-in-up" class="card">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
-                </div>
-                <div class="contentbx">
-                    <h3>Card Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>                    
-                </div>
-                <div class="hor-line"></div>
-                <div class="see flex">
-                    <div class="view">
-                        <span class="fal fa-eye mr-1"></span><span>0</span>
-                    </div>                    
-                    <div class="social">
-                        <span class="fal fa-thumbs-up mr-1"></span>                
-                        <span class="far fa-share-alt"></span>    
-                    </div>
-                </div>
-            </div>            
+                {% endfor %}
+            </div>               
         </div>
     </section>
 
@@ -211,7 +131,7 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis, sapiente itaque excepturi dolorum voluptates quod perspiciatis voluptas laborum tenetur ratione vitae minus similique praesentium aperiam, quasi doloremque, recusandae est.
         </div>
         <br>
-        <a class="btn" >
+        <a class="btn" href="" >
             Donate
         </a>
     </section>
@@ -221,45 +141,27 @@
             <h1><span>E</span>vents</h1>
         </div>
         <div class="container">
+            {% for i in events %}
             <div data-aos="zoom-out" class="card">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                <div class="imgbx event">
+                    <img src="{{ i.image.url }}" alt="image">
                 </div>
-                <div class="contentbx">
-                    <h3>Card Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                    <a href="#readmore">                        
-                            <span>Read More</span>        
-                            <span>Read More</span>
-                    </a>
+                <div class="contentbx event">
+                    <h3>{{ i.title }}</h3>
+                    <p class="more">{{ i.description }}</p>                    
                 </div>
-            </div>
-            <div data-aos="zoom-out" class="card">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
+                <div class="allotment">
+                    <div class="time">
+                        <span>Timings</span>
+                        <span>{{ i.time | naturaltime }}</span>
+                    </div>
+                    <div class="venue">
+                        <span>Venue</span>
+                        <span>{{ i.venue }}</span>
+                    </div>
                 </div>
-                <div class="contentbx">
-                    <h3>Card Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                    <a href="#readmore">                        
-                            <span>Read More</span>        
-                            <span>Read More</span>
-                    </a>
-                </div>
-            </div>
-            <div data-aos="zoom-out" class="card">
-                <div class="imgbx">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFuRhYBZxaO7qU9H1VqJWu8GU8nH4iDY93tQ&usqp=CAU" alt="image">
-                </div>
-                <div class="contentbx">
-                    <h3>Card Title</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore reiciendis nihil nisi placeat, alias magni provident eveniet. Fugiat tempore officia debitis laudantium possimus. Sequi dolorem quibusdam sit porro natus?</p>
-                    <a href="#readmore">                        
-                            <span>Read More</span>        
-                            <span>Read More</span>
-                    </a>
-                </div>
-            </div>            
+            </div>   
+            {% endfor %}             
         </div>
     </section>
 
@@ -280,7 +182,34 @@
                 </form>
             </div>
             <div class="map">
-                <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=17.377572,%2078.236373+(Voice%20Trust)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="350" frameborder="0"></iframe>
+                <div class="containerbx flex">
+                    <div class="contact-info">
+                        Phone number : <a href="tel:">Number</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="address">
+                        <div class="addr">
+                            Address: <br>
+                            Raghavendra heights,<br>
+                            H no 28_852,<br>
+                            Flat no 204,<br>
+                            NGO colony,<br>
+                            Nandyala,<br>
+                            Andhra Pradesh 518501.
+                        </div>
+                        <br>
+                        <div class="addr">
+                            Address: <br>
+                            3_32, bc colony,<br>
+                            Regadi pampalli (v), <br>
+                            UYYALAWADA (m), <br>
+                            Allagadda(t),<br>
+                            KURNOOL(d),<br>
+                            Andhra Pradesh.
+                        </div>
+                    </div>                    
+                </div>
             </div>           
         </div>
     </section>
@@ -430,7 +359,7 @@ function googleTranslateElementInit() {
 </script>
 <script>
     $(document).ready(function() {
-	var showChar = 500;
+	var showChar = 250;
 	var ellipsestext = "...";
 	var moretext = "Read more";
 	var lesstext = "Read less";
@@ -464,11 +393,6 @@ function googleTranslateElementInit() {
 	});
 });
 </script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 1200,
-    });
-  </script>
+
 </body>
 </html>
