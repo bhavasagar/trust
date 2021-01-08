@@ -23,7 +23,7 @@ from django.core.paginator import Paginator
 from email.message import EmailMessage
 from datetime import datetime, timedelta
 from django.db.models import Q
-from .models import Gallery, Blog, Event, Carousal
+from .models import Gallery, Blog, Event, Carousal, TrustMember
 from django.db.models.functions import ( ExtractDay, ExtractHour, ExtractMinute, ExtractMonth, ExtractSecond, ExtractWeek, ExtractWeekDay, ExtractYear )
 from django.utils.html import format_html
 
@@ -36,6 +36,13 @@ class Home(View):
         blogs = Blog.objects.filter(homepage_display=True)
         context={ 'carousal':carousal,'gallery':gallery, 'events':events, 'blogs':blogs }        
         return render(self.request,self.template_name,context=context)
+    def post(self, *args, **kwargs):
+        name = self.request.POST.get('name')
+        email =  self.request.POST.get('email')
+        phone =  self.request.POST.get('phone')
+        address =  self.request.POST.get('address')
+        TrustMember.objects.create(name=name,email=email,phone=phone,address=address)
+        return redirect('core:home')
 
 class Blog_page(View):
     template_name='blog.html'
