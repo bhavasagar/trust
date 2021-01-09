@@ -52,6 +52,24 @@ class Blog_page(View):
         context={ 'blog':blog,'blogs':blogs}        
         return render(self.request,self.template_name,context=context)
 
+class Blogs(View):
+    template_name='allblogs.html'
+    def get(self, *args, **kwargs):        
+        blogs = Blog.objects.all().order_by('-id')
+        context={'blogs':blogs}        
+        return render(self.request,self.template_name,context=context)
+
+class Gallery_page(View):
+    template_name='gallery.html'
+    def get(self, *args, **kwargs):
+        count = Gallery.objects.all().count()
+        images1 = Gallery.objects.all().order_by('-id')[0:int(count/4)]
+        images2 = Gallery.objects.all().order_by('-id')[int(count/4)+1:int(count/2)]
+        images3 = Gallery.objects.all().order_by('-id')[int(count/2)+1:3*int(count/4)]
+        images4 = Gallery.objects.all().order_by('-id')[3*int(count/4):int(count)]
+        context={ 'images1':images1,'images2':images2,'images3':images3,'images4':images4}        
+        return render(self.request,self.template_name,context=context)
+
 class Events_page(View):
     template_name='events.html'
     def get(self, *args, **kwargs):
