@@ -141,7 +141,8 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
 .carousal{
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
+    margin-top: 7rem;
 }
 .carousal .slides, .carousal .slides .slide, .carousal .slides .slide a .imgbx, .carousal .slides .slide img{
     position: absolute;
@@ -335,8 +336,8 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
   }
   .menu-overlay .items li a{
     text-decoration: none;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: var(--charcoal-black);
   }
   .events, .voice-trust,.gallery,.mission, .blogs, .donate, .contact{    
@@ -795,7 +796,10 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
     }
     header .navbar{
         padding: 10px 15px;        
-    }        
+    }   
+    .carousal{
+        height: 30vh;    
+    }     
     .menu{
         display: none;
     }
@@ -857,4 +861,7 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
   }
   .flex{
       display: flex !important;
+  }
+  h1,h2,h3,h5,h6,.venue{
+      text-transform: capitalize !important;
   }
