@@ -12,7 +12,7 @@
 <body>
     {% include 'navbar.html' %}
     <div class="container">        
-        <h2>Heading</h2>        
+        <span class="head"><h2>{{ blog.title }}</h2> <a class="fal fa-share-alt" href="whatsapp://send?text={{ request.get_full_path }}"></a></span>
         <div class="contentbx">
             <div class="imgbx">
                 <img src="{{blog.image1.url}}" alt="">
@@ -40,7 +40,7 @@
     <div class="hor-line"></div>
     <section data-aos="fade-up-right" class="blogs" id="blogs">
         <div class="heading">
-            <h1>View more <span>B</span>logs</h1>
+            <h1>View more <span>A</span>rticles</h1>
         </div>
         <div class="container">
             {% for i in blogs %}
@@ -51,17 +51,8 @@
                 <div class="contentbx">
                     <h3>{{ i.title }}</h3>
                     <p class="more">{{ i.first_paragraph }}</p>                    
-                </div>
-                <!-- <div class="hor-line"></div>
-                <div class="see flex">
-                    <div class="view">
-                        <span class="fal fa-eye mr-1"></span><span>0</span>
-                    </div>                    
-                    <div class="social">
-                        <span class="fal fa-thumbs-up mr-1"></span>                
-                        <span class="far fa-share-alt"></span>    
-                    </div> -->
-                </div> 
+                </div>                
+            </div> 
             {% endfor %}                    
         </div>
     </section>
