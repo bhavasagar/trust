@@ -10,16 +10,18 @@ from .views import (
     About,
     Gallery_page,
     Blogs,
+    Videos,
 )
 
 app_name = 'core'
-
+ 
 urlpatterns = [
     path('', Home.as_view(), name='home'),      
     path('blog/<int:pk>/', Blog_page.as_view(), name='blog-detail'),      
     path('gallery/', Gallery_page.as_view(), name='gallery'),
     path('blogs/', Blogs.as_view(), name='blogs'),      
     path('events/', Events_page.as_view(), name='events'),
-    path('obanna/', Obanna, name='obanna'),      
+    path('obanna/', Obanna, name='obanna'), 
+    path('youtubevideos/', Videos, name='videos'),     
     path('about/', About, name='about'), 
 ]

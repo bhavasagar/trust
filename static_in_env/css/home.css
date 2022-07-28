@@ -189,6 +189,7 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
     margin: 1rem;
     transition: 0.5s;
     cursor: pointer;
+    opacity: 0.5;
 }
 .carousal .control-links .dot:hover, .active-dot{
     border-radius: 5px !important;
@@ -233,20 +234,20 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
     transform: scale(0.83);
 }
 .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+    -webkit-animation-name: slide;
+    -webkit-animation-duration: 3s;
+    animation-name: slide;
+    animation-duration: 3s;
   }
   
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+  @-webkit-keyframes slide {
+    from {translateX(0%);} 
+    to {translateX(-100%);}
   }
   
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+  @keyframes slide {
+    from {translateX(0%);} 
+    to {translateX(-100%);}
   }
   section.voice-trust{
     background: var(--white);
@@ -383,7 +384,7 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
       padding-left: 0.9rem;
   }
   .container .card .contentbx.event{
-      margin-top: -7.5rem !important;
+      margin-top: -5.5rem !important;
       transition: 0.5s;
   }
   
@@ -447,7 +448,7 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
     }
     .gallery .images .img{
         width: 20rem;
-        height: 14rem;
+        height: 17rem;
         display: flex;      
         justify-content: space-evenly;
         align-items: center;
@@ -811,8 +812,8 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
         margin: 1rem 0.2rem;
     }
     .gallery .images .img{
-        width: 14rem;
-        height: 10rem;
+        width: 17rem;
+        height: 14rem;
     }   
     /* .gallery{
         padding-bottom: 5rem;

@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <meta name="description" content="VOICE Trust is a non-profitable organization which serves poor and needy people. Join us, with your Humanity, together let's serve people.">
+    <meta name="keywords" content="VOICE Trust,voicetrust.org, voicetrust.org.in, Vadde Obanna, Vaddera, Vadde, Obanna, Voicetrust, voicetrust, VoiceTrust, charity, Trust, Trust in Ap, Trust in Andhra, Voice Trust AP">
+    <meta name=”robots” content="index, follow">
+    <!--  for social media -->
+    <meta property="og:title" content="VOICE Trust" />
+    <meta property="og:description" content="VOICE Trust is a non-profitable organization which serves poor and needy people. Join us, with your Humanity, together let's serve people." />
+    <meta property="og:image" content="https://voicetrust.org.in/media/favicons/apple-touch-icon.png" />
+    <!--  for social media -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://voicetrust.org.in/media/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://voicetrust.org.in/media/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://voicetrust.org.in/media/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://voicetrust.org.in/media/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <style>
         .heading{
             margin-top: 7rem;
@@ -30,6 +44,18 @@
         flex-wrap: wrap;
         padding: 0 1rem;
         margin: 1rem auto;
+        }
+        
+        .row1 {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+        margin: 1rem auto;
+        justify-content:space-evenly;
+        align-items:center;
+        }
+        .row1 > iframe{
+          margin:1rem auto;
         }
 
         .column {
@@ -69,6 +95,13 @@
         <div class="heading">
             <h1><span>G</span>allery</h1>
         </div>    
+        <div class="bxcontent" onclick="location.href={% url 'core:videos' %}" style="cursor:pointer" >
+            <div class="row1" onclick="location.href={% url 'core:videos' %}" style="cursor:pointer" >
+            {% for v in vids %}
+              <iframe onclick="location.href={% url 'core:videos' %}"  width="460" height="315" src="https://youtube.com/embed/{{ v.video_id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+             {% endfor %}          
+            </div>
+        </div>
         <div class="bxcontent">
             <div class="row">
                 <div class="column">

@@ -151,10 +151,7 @@ header .navbar  .menu ul li:hover a, .menu-overlay .items li:hover a{
     padding-top: 5rem;
 }
 h2{
-    color: var(--charcoal-black);
-    margin: 1rem auto;
-    text-align: center;
-    margin-top: 5rem;
+    color: var(--charcoal-black);     
 }
 .contentbx .imgbx{
     display: flex;
@@ -219,6 +216,19 @@ hr{
     justify-content: left !important; 
     margin-left: 2rem !important;
 }
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    width: 100vw;
+    padding: 0 5rem;
+}
+.head a{
+    font-size: 1.8rem !important;      
+}
 @media screen and (max-width:1600px){
     header .navbar .logo{
         font-size: 1.4rem;        
@@ -234,7 +244,7 @@ hr{
     }
     .bared{
         display: block !important;
-    }
+    }    
   }  
   @media screen and (max-width:900px){
     .small-screen{
@@ -244,10 +254,10 @@ hr{
         display: none;
     }
     header .navbar .logo{
-        font-size: 1.4rem;        
+        font-size: 1rem;        
     }
     header .navbar .logo span{        
-        font-size: 1.6rem;    
+        font-size: 1.2rem;    
     }
     header .navbar{
         padding: 10px 15px;        
@@ -273,5 +283,8 @@ hr{
     }
     .see{
         padding: 1rem 0.5rem !important;
+    }
+    .head{
+        padding: 0;
     }
   }

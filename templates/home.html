@@ -9,14 +9,73 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">    
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <meta name="google-site-verification" content="rjE54tymdHYjM1qWAnDIjrrq5iOoml4HTG2tLXe4C0M" />
+    <meta name="description" content="VOICE Trust is a non-profitable organization which serves poor and needy people. Join us, with your Humanity, together let's serve people.">
+    <meta name="keywords" content="VOICE Trust,voicetrust.org, voicetrust.org.in, Vadde Obanna, Vaddera, Vadde, Obanna, Voicetrust, voicetrust, VoiceTrust, charity, Trust, Trust in Ap, Trust in Andhra, Voice Trust AP">
+    <meta name=”robots” content="index, follow">
+    <!--  for social media -->
+    <meta property="og:title" content="VOICE Trust" />
+    <meta property="og:description" content="VOICE Trust is a non-profitable organization which serves poor and needy people. Join us, with your Humanity, together let's serve people." />
+    <meta property="og:image" content="https://voicetrust.org.in/media/favicons/apple-touch-icon.png" />
+    <!--  for social media -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://voicetrust.org.in/media/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://voicetrust.org.in/media/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://voicetrust.org.in/media/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://voicetrust.org.in/media/favicons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+     <script type="application/ld+json">
+    [{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "About Us",
+        "item": "https://voicetrust.org.in/about"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Vadde Obanna",
+        "item": "https://voicetrust.org.in/obanna"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Events",
+        "item": "https://voicetrust.org.in/events"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Blogs",
+        "item": "https://voicetrust.org.in/blogs"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gallery",
+        "item": "https://voicetrust.org.in/gallery"
+      }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "About Us",
+        "item": "https://voicetrust.org.in/about"
+      }]
+    }]
+    </script>
+
+       
 </head>
 <body>
     {% include 'navbar.html' %}
     <section class="carousal" id="home">
         <div class="control-links">
-            <div class="dot" onclick="toslide(1)"></div>
-            <div class="dot" onclick="toslide(2)"></div>
-            <div class="dot" onclick="toslide(3)"></div>
+            {% for i in carousal %}
+            <div class="dot" onclick="toslide({{ forloop.counter }})"></div>
+            {% endfor %}
         </div>
         <div class="slides">
             {% for car in carousal  %}
@@ -24,9 +83,6 @@
                 <a href="{{ car.link }}">
                 <div class="imgbx">
                     <img src="{{ car.image.url }}" alt="image">
-                </div>
-                <div class="context">                    
-                    <span class="inline-text"><h3 class="inline-text"> {{ car.heading }}</h3></span>                    
                 </div>
                 </a>
             </div>   
@@ -46,10 +102,9 @@
         </div>
         <div class="content">
             <p style="display: block;text-align: center;">
-                To raise our voice for national intigrity, sovereignty and solidarity with the spirit of freedom fighters.
-                <br>To improve the human values especially in rural areas with the help of spiritual gurus irrespective of religions.                
+                Vadde Obanna intigrated charitable & Empowerment trust. This trust commited to serve the needy & Giving encouragement ,aspring the youth to achieve the greater heights                
             </p>
-        </div>
+        </div> 
     </section>    
 
     <section class="gallery" id="gallery">
@@ -58,7 +113,7 @@
         </div>
         <div class="images">
             {% for i in gallery %}
-            <div class="img" style="--p:{{forloop.counter}}">
+            <div onclick="location.href={% url 'core:gallery' %}" class="img" style="--p:{{forloop.counter}}">
                 <img src="{{ i.image.url }}" alt="image">
             </div>    
             {% endfor %}        
@@ -70,14 +125,9 @@
         <div class="shead">
             <h1><span style="color: var(--website-color);">M</span>ission</h1>
         </div>
-        <h3>A sub heading text</h3>
-        <p data-aos="flip-up " class="more" style="display: block;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, possimus laudantium! Culpa beatae nostrum itaque ea, dolore rem doloribus fuga, fugiat illo et quis laborum voluptatem quibusdam? Quibusdam, fuga vitae!
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea earum id vitae facere, quae accusamus maiores? Doloribus, blanditiis repellendus consequuntur quibusdam adipisci quidem, excepturi quasi quam necessitatibus id consequatur at?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet porro sed autem ut aliquam, soluta aspernatur veritatis nam nobis nostrum corrupti harum beatae consequatur officiis a! Beatae amet assumenda quaerat.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, dolorum est odit similique et cumque ea laborum consequuntur provident? Qui animi accusantium harum porro pariatur natus aspernatur. Distinctio, deleniti tempore!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatibus repudiandae eos? Id tempora quae quam impedit voluptatem ea, consequuntur corporis quia alias possimus quis mollitia repellendus ab rem necessitatibus?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, facilis sapiente eligendi odit, facere nulla eius sunt reprehenderit vero voluptate nemo? Necessitatibus aut, minima sint impedit recusandae quo consectetur similique.            
+        
+        <p data-aos="flip-up " style="display: block;">
+            The Voice Trust is committed to improving the life-chances of  poor children and young people through excellence in education, encouraging pupils to challenge themselves and hold high aspirations in their academics & serving the food to poor .          
         </p>
     </section>
 
@@ -87,23 +137,14 @@
         </div>
         <div class="container">
             {% for i in blogs %}
-            <div data-aos="zoom-in-up" class="card">
-                <div class="imgbx">
+            <div onclick="location.href={% url 'core:blog-detail' i.id %}" data-aos="zoom-in-up" class="card">
+                <div onclick="location.href='{% url 'core:blog-detail' i.id %}'" class="imgbx">
                     <img src="{{i.image1.url}}" alt="image">
                 </div>
-                <div class="contentbx">
-                    <h3>{{ i.title }}</h3>
-                    <p class="more">{{ i.first_paragraph }}</p>                    
+                <div onclick="location.href='{% url 'core:blog-detail' i.id %}'" class="contentbx">
+                    <h3 onclick="location.href='{% url 'core:blog-detail' i.id %}'">{{ i.title }}</h3>
+                    <p onclick="location.href={% url 'core:blogs' %}" class="more">{{ i.first_paragraph }}</p>                    
                 </div>
-                <!-- <div class="hor-line"></div>
-                <div class="see flex">
-                    <div class="view">
-                        <span class="fal fa-eye mr-1"></span><span>0</span>
-                    </div>                    
-                    <div class="social">
-                        <span class="fal fa-thumbs-up mr-1"></span>                
-                        <span class="far fa-share-alt"></span>    
-                    </div> -->
                 </div>
                 {% endfor %}
             </div>               
@@ -114,11 +155,9 @@
         <div class="shead">
             <h1><span style="color: var(--orange-blue-combo);">D</span>onate</h1>
         </div>
-        <div class="content more">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi sint architecto suscipit blanditiis tempore. Eligendi perspiciatis unde suscipit eveniet ratione quia quae, explicabo ducimus amet sit, est doloribus labore dolores?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nulla pariatur optio quam voluptate? Eveniet ut a pariatur autem velit? Doloremque quos explicabo eum nesciunt vel corporis ipsam modi delectus.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, exercitationem, repellat nostrum quis nisi commodi eos tempora magni, incidunt neque quidem veniam dignissimos omnis laborum voluptate molestiae animi ea voluptates.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis, sapiente itaque excepturi dolorum voluptates quod perspiciatis voluptas laborum tenetur ratione vitae minus similique praesentium aperiam, quasi doloremque, recusandae est.
+        <div class="content">
+            The rupee you donate will reach the needy. Let's raise the funds to serve the people.
+"Remember  that the happiest people are not those getting more,but those giving more"
         </div>
         <br>
         <a class="btn" href="" >
@@ -174,13 +213,13 @@
             <div class="map">
                 <div class="containerbx flex">
                     <div class="contact-info">
-                        Phone number : <a href="tel:">Number</a>
+                        Phone number : <a href="tel:9666672510" style="cursior:pointer">+91 96666 72510</a>
                     </div>
                     <br>
                     <br>
                     <div class="address">
                         <div class="addr">
-                            Address: <br>
+                            Corporate Address: <br>
                             Raghavendra heights,<br>
                             H no 28_852,<br>
                             Flat no 204,<br>
@@ -190,7 +229,7 @@
                         </div>
                         <br>
                         <div class="addr">
-                            Address: <br>
+                            Regiatered Address: <br>
                             3_32, bc colony,<br>
                             Regadi pampalli (v), <br>
                             UYYALAWADA (m), <br>
@@ -205,9 +244,9 @@
     </section>
     <section class="socialbx">
         <div class="cpycontainer">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-twitter"></a>
+            <a href="https://www.facebook.com/VOICE-TRUST-100146648771490/" class="fab fa-facebook-f"></a>
+            <a href="https://youtube.com/playlist?list=PLoZAdQtLdBfDT6ukeCrTzNtAEDcHdUS6U" class="fab fa-youtube"></a>
+            <a href="https://twitter.com/BalaNarasimhud3?s=08" class="fab fa-twitter"></a>
         </div>
         <div class="copyright">
             <span>&#169; All rights reserverd by VOICE Trust. Powered by Presimax sof sols.</span>

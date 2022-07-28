@@ -1,7 +1,6 @@
 from .base import *
 import os
 
-ALLOWED_HOSTS = ['*']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -10,22 +9,17 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'}
 ]
 
+ALLOWED_HOSTS = ['voicetrustorg.in']
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'trust',
+        'USER': 'trustuser',
+        'PASSWORD': 'password@trust',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': '**',
-#         'USER': '**',
-#         'PASSWORD': '**',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30

@@ -15,7 +15,6 @@ STATUS = (
 
 class Carousal(models.Model):
     image = models.ImageField(upload_to='casrousal/', null=True)
-    heading = models.CharField(max_length=150)
     link = models.URLField(max_length = 200)
     update_at = models.DateTimeField(auto_now_add=True)
 
@@ -30,7 +29,7 @@ class Gallery(models.Model):
         return f"Image-{self.pk}"
 
 class Event(models.Model):    
-    title = models.CharField(max_length=15)
+    title = models.CharField(max_length=50)
     description = models.TextField()
     venue = models.CharField(max_length=100)
     image = models.ImageField(upload_to='events/', null=True)
@@ -63,3 +62,21 @@ class TrustMember(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+        
+class TrustTeamMember(models.Model):
+    name = models.CharField(max_length=20)
+    designation = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='members/', null=True)
+    email = models.CharField(max_length=20) 
+    phone = models.CharField(max_length=20)
+    address = models.TextField()
+
+    def __str__(self):
+        return f"{self.name}"        
+        
+class YouTubeVideo(models.Model):
+    video_id = models.CharField(max_length=20)  
+    update_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Video-{self.pk}"        

@@ -1,23 +1,17 @@
 from .base import *
 import os
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['voicetrustorg.in']
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'trust',
+        'USER': 'trustuser',
+        'PASSWORD': 'password@trust',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'nak',
-#         'USER': 'postgres',
-#         'PASSWORD': '123',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
